@@ -14,10 +14,12 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const app_1 = __importDefault(require("./app"));
 const index_1 = __importDefault(require("./config/index"));
+const mongoose_1 = __importDefault(require("mongoose"));
 let server;
 function main() {
     return __awaiter(this, void 0, void 0, function* () {
         try {
+            yield mongoose_1.default.connect(index_1.default.database_url);
             server = app_1.default.listen(index_1.default.port, () => {
                 console.log(`app is listening on port ${index_1.default.port}`);
             });
