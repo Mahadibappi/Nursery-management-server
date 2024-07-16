@@ -23,7 +23,7 @@ export const createCategory = async (req: Request, res: Response) => {
 
 export const getCategories = async (req: Request, res: Response) => {
   try {
-    const categories = await Category.find();
+    const categories = await Category.find().populate("products");
     res.status(200).json(categories);
   } catch (err: any) {
     res.status(400).json({ error: err.message });

@@ -5,10 +5,10 @@ interface Product extends Document {
   price: number;
   description: string;
   rating: number;
-  category: {
-    image: string;
-    details: Array<object>;
-  };
+  image: string;
+  category: string;
+  height: string;
+  potSize: string;
 }
 
 const productSchema = new Schema<Product>(
@@ -17,10 +17,10 @@ const productSchema = new Schema<Product>(
     price: { type: Number, required: true },
     description: { type: String, required: true },
     rating: { type: Number, required: true },
-    category: {
-      image: { type: String, required: true },
-      details: [{ type: Object }],
-    },
+    category: { type: String, required: true },
+    image: { type: String, required: true },
+    height: { type: String, required: true },
+    potSize: { type: String, required: true },
   },
   {
     timestamps: true,
@@ -28,3 +28,4 @@ const productSchema = new Schema<Product>(
 );
 
 export default model<Product>("Product", productSchema);
+//
