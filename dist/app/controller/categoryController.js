@@ -34,7 +34,7 @@ const createCategory = (req, res) => __awaiter(void 0, void 0, void 0, function*
 exports.createCategory = createCategory;
 const getCategories = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        const categories = yield categoryModel_1.default.find();
+        const categories = yield categoryModel_1.default.find().populate("products");
         res.status(200).json(categories);
     }
     catch (err) {

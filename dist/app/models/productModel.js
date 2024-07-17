@@ -6,11 +6,12 @@ const productSchema = new mongoose_1.Schema({
     price: { type: Number, required: true },
     description: { type: String, required: true },
     rating: { type: Number, required: true },
-    category: {
-        image: { type: String, required: true },
-        details: [{ type: Object }],
-    },
+    category: { type: String, required: true },
+    image: { type: String, required: true },
+    height: { type: String, required: true },
+    potSize: { type: String, required: true },
 }, {
     timestamps: true,
 });
 exports.default = (0, mongoose_1.model)("Product", productSchema);
+//
