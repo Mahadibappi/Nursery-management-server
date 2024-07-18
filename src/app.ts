@@ -9,7 +9,10 @@ const app: Application = express();
 //middlewares
 app.use(express.json());
 app.use(cors());
-const allowedOrigins = ["http://localhost:5173", "http://localhost:5000"];
+const allowedOrigins = [
+  "https://nursery-management-clien-xsc7.vercel.app",
+  "http://localhost:5173",
+];
 app.use(
   cors({
     origin: allowedOrigins,
